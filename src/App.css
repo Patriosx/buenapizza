@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap");
+
+:root {
+	--red: #4e1113;
+	--white: #ffffff;
+	--orange: #ee9b00;
+	--gray: #e9d8a6;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+html {
+	text-rendering: optimizeLegibility;
+	font-family: "Roboto", sans-serif;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	background-color: #fff;
+	color: #fff;
+}
+/******************************/
+/* Grid container */
+.grid-container {
+	height: 100vh;
+	display: grid;
+	grid-template-rows: 3rem 2fr 5fr;
+	border: 1px solid black;
+}
+a {
+	text-decoration: none;
+}
+/***********************************
+			CallActionBar
+/***********************************/
+.CallActionBar {
+	background-color: black;
+	color: #fff;
+	position: sticky;
+	top: 0;
+}
+ion-icon {
+	font-size: 1.5rem;
+}
+.nav-tools {
+	margin-right: 0.1rem;
+	display: flex;
+}
+.nav-tools a {
+	color: var(--gray);
+}
+.nav-tools a:hover {
+	color: var(--orange);
+	transition: 1s;
+}
+.logo-action .logo {
+	height: 40px;
+	margin-left: 0.4rem;
+}
+.logo-action .logo img {
+	height: 100%;
+	border-radius: 50%;
+}
+.phone h5 {
+	margin-top: 0.4rem;
+	padding-left: 0.6rem;
+}
+.logo-action {
+	font-weight: 800;
+}
+/***********************************
+			HeroHeader
+/***********************************/
+.HeroHeader {
+	background-color: #fff;
+	display: grid;
+	grid-template-rows: 1fr;
+}
+header {
+	display: grid;
+	min-height: 200px;
+	grid-template-columns: repeat(3, 1fr);
+}
+header > div {
+	/* border: 1px solid black; */
+}
+.logo-header {
+	height: 90%;
+	text-align: center;
+}
+.logo-header img {
+	height: 100%;
+	margin: 0.8rem 0;
+	/* border-radius: 50%; */
+}
+.HeroHeader ul li {
+	display: inline-block;
+	text-decoration: none;
+	margin: 0 1rem;
+}
+.HeroHeader ul li a {
+	color: #e9d8a6;
+	font-weight: 600;
+	line-height: 150%;
+	letter-spacing: 0.1rem;
+	text-transform: lowercase;
+	font-family: "Lora", serif;
+	font-style: italic;
+	font-size: larger;
+}
+/***********************************
+			HeroBody
+/***********************************/
+.HeroBody {
+	background-image: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.6)), url(https://images.unsplash.com/photo-1600628421055-4d30de868b8f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fHBpenphfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+	background-size: cover;
+	background-position: 40%;
+	background-attachment: fixed;
+	background-origin: content-box;
+}
+.hero-text {
+	color: #fff;
+	letter-spacing: 0.2rem;
+	font-family: "Lora", serif;
+	text-transform: uppercase;
+
+	padding: 10% 6%;
+}
+.hero-text a {
+	text-transform: lowercase;
+	margin: 0.2rem 0.6rem;
+}
+/***********************************/
