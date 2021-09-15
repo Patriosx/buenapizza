@@ -5,7 +5,7 @@ Consta de:
 
   Backend:
   
-    Node.js, Express, mongoDb
+    Node.js, Express, mongoDb, Mongoose
     Heroku.com: https://buenapizza.herokuapp.com/
     
    Frontend:
