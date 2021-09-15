@@ -1,5 +1,5 @@
 # buenapizza
-Proyecto para el curso Desarrollo de aplicaciones con tecnología web del centro CIfe
+Proyecto final para el curso Desarrollo de aplicaciones con tecnología web del centro Cife
 
 Consta de:
 
