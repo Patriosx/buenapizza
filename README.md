@@ -1,6 +1,8 @@
 # buenapizza
 Proyecto para el curso Desarrollo de aplicaciones con tecnología web del centro CIfe
+
 Consta de:
+
   Backend:
   
     Node.js, Express, mongoDb
