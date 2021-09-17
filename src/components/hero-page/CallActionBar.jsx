@@ -8,13 +8,13 @@ const CallActionBar = () => {
 	return (
 		<div className="CallActionBar d-flex justify-content-between align-items-center">
 			<div className="row logo-action">
-				<div className="logo col-2">
+				<div className="logo col-2" onClick={() => window.scrollTo(0, 0)}>
 					<NavLink to="/" exact activeClassName="active">
 						<img src={Logo2} className="" />
 					</NavLink>
 				</div>
-				<div className="col-9 phone">
-					<h5 className="text-muted">+34 828 546 987</h5>
+				<div className="col-9 phone" name="arriba">
+					<h5 className="text-muted"></h5>
 				</div>
 			</div>
 			<NavTools />

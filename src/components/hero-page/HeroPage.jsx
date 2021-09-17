@@ -11,7 +11,7 @@ const HeroPage = () => {
 			<Router>
 				<div className="grid-container">
 					<CallActionBar />
-					<HeroHeader />
+					{/* <HeroHeader /> */}
 					<HeroBody />
 				</div>
 			</Router>

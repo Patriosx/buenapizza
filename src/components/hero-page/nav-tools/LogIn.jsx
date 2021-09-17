@@ -46,8 +46,8 @@ const LogIn = () => {
 	};
 	return (
 		<>
-			<div className="log-in col">
-				<div>
+			<div className="log-in col mt-5">
+				<div className="modal-con">
 					<div className="modal-dialog">
 						<div className="modal-content">
 							<div className="modal-header">

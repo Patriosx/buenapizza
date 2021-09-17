@@ -45,7 +45,7 @@ const SignUp = () => {
 	};
 	return (
 		<>
-			<div>
+			<div className="mt-5">
 				<form action="" onSubmit={submitForm}>
 					<div className="modal-dialog">
 						<div className="modal-content">

@@ -3,11 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import SignUp from "./nav-tools/SignUp";
 import LogIn from "./nav-tools/LogIn";
 import User from "./nav-tools/User";
-import Cookies from "universal-cookie";
 
 const HeroBody = () => {
-	const cookies = new Cookies();
-
 	return (
 		<div className="HeroBody">
 			<div className="hero-body">
@@ -25,17 +22,13 @@ const HeroBody = () => {
 						{/* <Cart /> */}
 					</Route>
 					<Route exact path="/">
-						<div className="hero-text">
-							<h1>
-								Las pizzas más cremas
-								<br /> de Gran Canaria!
-							</h1>
-							<a href="#" className="btn btn-warning">
-								DOMICILIO
-							</a>
-							<a href="#" className="btn btn-outline-warning">
-								RECOGER
-							</a>
+						<div className="hero-content">
+							<div className="hero-text">
+								<h1>Las pizzas más cremas de Gran Canaria!</h1>
+								<div>
+									<button className="hero-btn">Haz tu pedido aquí!</button>
+								</div>
+							</div>
 						</div>
 					</Route>
 				</Switch>
