@@ -1,15 +1,17 @@
 import React from "react";
-
+import { cart } from "../../products/index";
 const Cart = () => {
+	console.log(cart);
 	return (
 		<>
-			<div className="col">
-				<a href="#" data-bs-toggle="modal" data-bs-target="#">
-					<ion-icon name="cart-outline"></ion-icon>
-				</a>
-				{/* <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-						<ion-icon name="cart-outline"></ion-icon>
-					</button> */}
+			<div className="container">
+				{cart.map((product) => {
+					return (
+						<div>
+							<p>{product.name}</p>
+						</div>
+					);
+				})}
 			</div>
 		</>
 	);
