@@ -5,7 +5,7 @@ const Basket = ({ cart, cartItems, onAdd, onRemove }) => {
 	const productsPrice = cartItems.reduce((a, c) => a + c.precio * c.cantidad, 0);
 	const discount = 0.7;
 	return (
-		<>
+		<div>
 			<h1>Orden</h1>
 			<div>{cartItems.length === 0 && <div>El carrito esta vacío</div>}</div>
 			{cartItems.map((product) => {
@@ -40,11 +40,11 @@ const Basket = ({ cart, cartItems, onAdd, onRemove }) => {
 						</div>
 					</div>
 					<div className="row">
-						<button className="checkout">Pagar</button>
+						<button className="checkout">Finalizar pedido</button>
 					</div>
 				</>
 			)}
-		</>
+		</div>
 	);
 };
 

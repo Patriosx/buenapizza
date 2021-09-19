@@ -6,12 +6,12 @@ const Index = ({ cart, cartItems, onAdd, onRemove }) => {
 	console.log("cart", cart);
 
 	return (
-		<div className="container card mt-5 ">
-			<div className="CartIndex">
-				<div className="col">
+		<div className="container card mt-5">
+			<div className="row">
+				<div className="col-md" id="">
 					<Cart cart={cart} cartItems={cartItems} />
 				</div>
-				<div className="col">
+				<div className="col-md" id="">
 					<Basket cart={cart} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
 				</div>
 			</div>

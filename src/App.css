@@ -177,16 +177,7 @@ ion-icon {
 #remove {
 	/* color: rgb(4, 4, 155); */
 }
-@media screen and (max-width: 580px) {
-	.CartIndex {
-		flex-wrap: nowrap;
-		background-color: blue;
-	}
-}
-#row {
-	display: flex;
-	justify-content: space-between;
-}
+
 .checkout {
 	font-size: 1.2rem;
 	padding: 0.5rem 2rem;

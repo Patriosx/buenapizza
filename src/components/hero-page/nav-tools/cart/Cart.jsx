@@ -4,7 +4,7 @@ const Cart = ({ cart, cartItems }) => {
 	// console.log("cart", cart);
 	console.log(cartItems);
 	return (
-		<>
+		<div>
 			<h1>Productos en la cesta</h1>
 			{cartItems.map((product, index) => {
 				console.log("id pizza: ", product._id);
@@ -24,7 +24,7 @@ const Cart = ({ cart, cartItems }) => {
 					</div>
 				);
 			})}
-		</>
+		</div>
 	);
 };
 
