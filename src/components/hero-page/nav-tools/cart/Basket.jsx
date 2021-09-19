@@ -1,6 +1,9 @@
 import React from "react";
 import { Checkout } from "./Checkout";
-
+import { useState } from "react";
+import axios from "axios";
+import swal from "sweetalert";
+import Cookies from "universal-cookie";
 const Basket = ({ cartItems, onAdd, onRemove }) => {
 	//
 	const productsPrice = cartItems.reduce((a, c) => a + c.precio * c.cantidad, 0);
@@ -8,7 +11,6 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
 	const totalPrice = productsPrice * discount;
 	return (
 		<div>
-			<h1>Orden</h1>
 			<div>{cartItems.length === 0 && <div>El carrito esta vacío</div>}</div>
 			{cartItems.map((product) => {
 				return (
@@ -41,7 +43,7 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
 							</p>
 						</div>
 					</div>
-					<div className="row">
+					<div>
 						<Checkout totalPrice={totalPrice} cartItems={cartItems} />
 					</div>
 				</>

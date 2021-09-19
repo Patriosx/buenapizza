@@ -5,7 +5,7 @@ import swal from "sweetalert";
 import Cookies from "universal-cookie";
 
 const LogIn = ({ access, setAccess }) => {
-	const cookies = new Cookies();
+	const cookiesLog = new Cookies();
 
 	const [login, setLogin] = useState({
 		email: "",
@@ -28,14 +28,15 @@ const LogIn = ({ access, setAccess }) => {
 			.then((data) => {
 				// Usuario logeado correctamente
 				console.log("Usuario logeado");
-				//comprobamos cookies
+				//comprobamos cookiesLog
 				setAccess(true);
-				//guardamos las cookies
-				cookies.set("userId", data.userId, { path: "/" });
-				cookies.set("nombre", data.nombre, { path: "/" });
-				cookies.set("apellidos", data.apellidos, { path: "/" });
-				cookies.set("email", data.email, { path: "/" });
-				cookies.set("telefono", data.telefono, { path: "/" });
+				//guardamos las cookiesLog
+				cookiesLog.set("userId", data.userId, { path: "/" });
+				cookiesLog.set("nombre", data.nombre, { path: "/" });
+				cookiesLog.set("apellidos", data.apellidos, { path: "/" });
+				cookiesLog.set("email", data.email, { path: "/" });
+				cookiesLog.set("telefono", data.telefono, { path: "/" });
+				cookiesLog.set("token", data.token, { path: "/" });
 				swal(`Bienvenid@ ${data.nombre}`);
 				window.location.href = "./";
 			})

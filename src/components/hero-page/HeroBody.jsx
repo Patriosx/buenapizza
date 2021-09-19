@@ -27,7 +27,9 @@ const HeroBody = ({ cartItems, onAdd, onRemove, access, setAccess }) => {
 							<div className="hero-text">
 								<h1>Las pizzas más cremas de Gran Canaria!</h1>
 								<div>
-									<button className="hero-btn">Haz tu pedido aquí!</button>
+									<button className="hero-btn" onClick={() => window.scrollTo(0, 625)}>
+										Haz tu pedido aquí!
+									</button>
 								</div>
 							</div>
 						</div>
