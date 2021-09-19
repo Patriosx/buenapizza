@@ -1,12 +1,9 @@
 import React from "react";
 import { Checkout } from "./Checkout";
-import { useState } from "react";
-import axios from "axios";
-import swal from "sweetalert";
-import Cookies from "universal-cookie";
+
 const Basket = ({ cartItems, onAdd, onRemove }) => {
 	//
-	const productsPrice = cartItems.reduce((a, c) => a + c.precio * c.cantidad, 0);
+	const productsPrice = cartItems.reduce((previousValue, currentValue) => previousValue + currentValue.precio * currentValue.cantidad, 0);
 	const discount = 0.7;
 	const totalPrice = productsPrice * discount;
 	return (

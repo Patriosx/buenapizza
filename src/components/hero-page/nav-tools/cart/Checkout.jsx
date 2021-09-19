@@ -9,7 +9,7 @@ export const Checkout = ({ totalPrice, cartItems }) => {
 	const goToTop = () => window.scrollTo(0, 0);
 	const cookies = new Cookies();
 
-	cookies.set("cartItems", cartItems, { path: "/cart" });
+	cookies.set("cartItems", cartItems);
 
 	const [order, setOrder] = useState({
 		id_usuario: cookies.get("userId"),
