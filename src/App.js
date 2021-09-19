@@ -4,9 +4,8 @@ import "./App.css";
 import HeroPage from "./components/hero-page/HeroPage";
 import Products from "./components/products";
 function App() {
-	const [cart, setCart] = useState([]);
 	const [pizzaList, setPizzaList] = useState([]);
-
+	const [access, setAccess] = useState(false);
 	/****************************************************** */
 	const [cartItems, setCartItems] = useState([]);
 	//CART
@@ -43,15 +42,11 @@ function App() {
 		} catch (error) {
 			console.log(error);
 		}
-		console.log("pizzaList", pizzaList);
-	};
-	const addProduct = (newProduct) => {
-		setCart([...cart, newProduct]);
 	};
 	return (
 		<>
-			<HeroPage cart={cart} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-			<Products heading="Elige tu pizza" cart={cart} addProduct={addProduct} getPizzas={getPizzas} pizzaList={pizzaList} onAdd={onAdd} cartItems={cartItems} />
+			<HeroPage cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} access={access} setAccess={setAccess} />
+			<Products heading="Elige tu pizza" getPizzas={getPizzas} pizzaList={pizzaList} onAdd={onAdd} cartItems={cartItems} />
 		</>
 	);
 }

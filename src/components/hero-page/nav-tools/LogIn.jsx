@@ -4,9 +4,9 @@ import axios from "axios";
 import swal from "sweetalert";
 import Cookies from "universal-cookie";
 
-const LogIn = () => {
+const LogIn = ({ access, setAccess }) => {
 	const cookies = new Cookies();
-	const [access, setAccess] = useState(false);
+
 	const [login, setLogin] = useState({
 		email: "",
 		password: "",
@@ -29,7 +29,7 @@ const LogIn = () => {
 				// Usuario logeado correctamente
 				console.log("Usuario logeado");
 				//comprobamos cookies
-
+				setAccess(true);
 				//guardamos las cookies
 				cookies.set("userId", data.userId, { path: "/" });
 				cookies.set("nombre", data.nombre, { path: "/" });

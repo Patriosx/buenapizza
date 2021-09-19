@@ -5,7 +5,7 @@ import LogIn from "./nav-tools/LogIn";
 import User from "./nav-tools/User";
 import CartIndex from "./nav-tools/cart/CartIndex";
 
-const HeroBody = ({ cart, cartItems, onAdd, onRemove }) => {
+const HeroBody = ({ cartItems, onAdd, onRemove, access, setAccess }) => {
 	return (
 		<div className="HeroBody">
 			<div className="hero-body">
@@ -14,13 +14,13 @@ const HeroBody = ({ cart, cartItems, onAdd, onRemove }) => {
 						<SignUp />
 					</Route>
 					<Route exact path="/login">
-						<LogIn />
+						<LogIn access={access} setAccess={setAccess} />
 					</Route>
 					<Route exact path="/user">
 						<User />
 					</Route>
 					<Route exact path="/cart">
-						<CartIndex cart={cart} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+						<CartIndex cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
 					</Route>
 					<Route exact path="/">
 						<div className="hero-content">

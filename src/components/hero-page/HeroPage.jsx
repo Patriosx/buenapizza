@@ -3,14 +3,14 @@ import CallActionBar from "./CallActionBar";
 import HeroBody from "./HeroBody";
 import "./heroStyles.css";
 import { BrowserRouter as Router } from "react-router-dom";
-const HeroPage = ({ cart, cartItems, onAdd, onRemove }) => {
+const HeroPage = ({ cartItems, onAdd, onRemove, access, setAccess }) => {
 	//cart lo recibe al final el componente Cart
 	return (
 		<div className="">
 			<Router>
 				<div className="grid-container">
-					<CallActionBar cart={cart} cartItems={cartItems} />
-					<HeroBody cart={cart} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+					<CallActionBar cartItems={cartItems} />
+					<HeroBody cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} access={access} setAccess={setAccess} />
 				</div>
 			</Router>
 		</div>

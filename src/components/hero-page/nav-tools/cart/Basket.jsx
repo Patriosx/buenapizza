@@ -1,9 +1,11 @@
 import React from "react";
+import { Checkout } from "./Checkout";
 
-const Basket = ({ cart, cartItems, onAdd, onRemove }) => {
+const Basket = ({ cartItems, onAdd, onRemove }) => {
 	//
 	const productsPrice = cartItems.reduce((a, c) => a + c.precio * c.cantidad, 0);
 	const discount = 0.7;
+	const totalPrice = productsPrice * discount;
 	return (
 		<div>
 			<h1>Orden</h1>
@@ -35,12 +37,12 @@ const Basket = ({ cart, cartItems, onAdd, onRemove }) => {
 								<br />
 								Descuento: {discount * 10}%
 								<br />
-								<strong>Total a pagar: {(productsPrice * discount).toFixed(2)}€</strong>
+								<strong>Total a pagar: {totalPrice.toFixed(2)}€</strong>
 							</p>
 						</div>
 					</div>
 					<div className="row">
-						<button className="checkout">Finalizar pedido</button>
+						<Checkout totalPrice={totalPrice} cartItems={cartItems} />
 					</div>
 				</>
 			)}

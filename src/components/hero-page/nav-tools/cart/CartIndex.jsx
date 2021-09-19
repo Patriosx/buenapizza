@@ -1,18 +1,14 @@
-import { useState } from "react";
-import { productData } from "../../../products/data";
 import Basket from "./Basket.jsx";
 import Cart from "./Cart";
-const Index = ({ cart, cartItems, onAdd, onRemove }) => {
-	console.log("cart", cart);
-
+const Index = ({ cartItems, onAdd, onRemove }) => {
 	return (
 		<div className="container card mt-5">
 			<div className="row">
 				<div className="col-md" id="">
-					<Cart cart={cart} cartItems={cartItems} />
+					<Cart cartItems={cartItems} />
 				</div>
 				<div className="col-md" id="">
-					<Basket cart={cart} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+					<Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
 				</div>
 			</div>
 		</div>
