@@ -1,18 +1,16 @@
 import React from "react";
 import CallActionBar from "./CallActionBar";
 import HeroBody from "./HeroBody";
-import HeroHeader from "./HeroHeader";
 import "./heroStyles.css";
 import { BrowserRouter as Router } from "react-router-dom";
-
-const HeroPage = () => {
+const HeroPage = ({ cart, cartItems, onAdd, onRemove }) => {
+	//cart lo recibe al final el componente Cart
 	return (
 		<div className="">
 			<Router>
 				<div className="grid-container">
-					<CallActionBar />
-					{/* <HeroHeader /> */}
-					<HeroBody />
+					<CallActionBar cart={cart} cartItems={cartItems} />
+					<HeroBody cart={cart} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
 				</div>
 			</Router>
 		</div>

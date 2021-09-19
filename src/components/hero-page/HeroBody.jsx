@@ -3,8 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import SignUp from "./nav-tools/SignUp";
 import LogIn from "./nav-tools/LogIn";
 import User from "./nav-tools/User";
+import CartIndex from "./nav-tools/cart/CartIndex";
 
-const HeroBody = () => {
+const HeroBody = ({ cart, cartItems, onAdd, onRemove }) => {
 	return (
 		<div className="HeroBody">
 			<div className="hero-body">
@@ -19,7 +20,7 @@ const HeroBody = () => {
 						<User />
 					</Route>
 					<Route exact path="/cart">
-						{/* <Cart /> */}
+						<CartIndex cart={cart} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
 					</Route>
 					<Route exact path="/">
 						<div className="hero-content">
