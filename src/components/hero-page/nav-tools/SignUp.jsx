@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 const SignUp = () => {
 	const [newCustomer, setNewCustomer] = useState({
 		nombre: "".trim(),
@@ -24,23 +24,43 @@ const SignUp = () => {
 		await axios
 			.post(`${process.env.REACT_APP_BASE_URL}/usuarios/`, newCustomer)
 			.then((response) => {
-				console.log("Usuario creado");
-				swal("Usuario creado!", "Te has registrado con exito", { icon: "success" });
-				window.location.href = "./login";
+				Swal.fire({
+					position: "top",
+					icon: "success",
+					title: `Usuario creado correctamente`,
+					showConfirmButton: false,
+					timer: 1500,
+				  }).then(() => {
+					window.location.href = "./login";
+				  });
+				
 			})
 			.catch((error) => {
-				console.log(error.response.data.message);
-				swal("Ese email ya esta en uso", { icon: "warning" });
+				Swal.fire({
+					position: "top",
+					icon: "warning",
+					title: `Error al crear usuario`,
+					text: 'Comprueba tus datos',
+					showConfirmButton: false,
+					timer: 1500,
+				  })
 				document.getElementById("legal").checked = false;
 			});
 	};
 	const repeatPassword = () => {
 		const p1 = document.getElementById("pass1");
 		const p2 = document.getElementById("pass2");
-
+		
 		if (p1.value !== p2.value) {
-			document.getElementById("legal").checked = false;
-			swal("Las contraseñas no coinciden", "comprueba haberlas escrito bien", { icon: "warning" });
+		document.getElementById("legal").checked = false;
+			Swal.fire({
+				position: "top",
+				icon: "warning",
+				title: "Las contraseñas no coinciden",
+				text: 'Comprueba tus datos',
+				showConfirmButton: false,
+				timer: 1500,
+			  })
 		}
 	};
 	return (
