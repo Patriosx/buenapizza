@@ -14,7 +14,7 @@ const NavTools = ({ cartItems }) => {
 						<div className="p-2 flex-fill bd-highlight">{cookies.get("nombre")}</div>
 						<div className="p-2 flex-fill bd-highlight" onClick={goToTop}>
 							<NavLink to="/user" exact activeClassName="active">
-								<ion-icon name="person"></ion-icon>
+								<ion-icon name="person-circle"></ion-icon>
 							</NavLink>
 						</div>
 					</>
