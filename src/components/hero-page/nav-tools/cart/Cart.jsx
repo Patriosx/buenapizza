@@ -3,7 +3,7 @@ import { productData } from "../../../products/data";
 const Cart = ({ cartItems }) => {
 	// console.log("cartItems", cartItems);
 	return (
-		<div>
+		<div className="scroller">
 			<h1>Productos en la cesta</h1>
 			{cartItems.map((product, index) => {
 				// console.log("id pizza: ", product._id);
@@ -15,13 +15,13 @@ const Cart = ({ cartItems }) => {
 							"
 								style={{ maxWidth: "6rem" }}
 							>
-								<img src={product.img_url} className="img-fluid rounded-start" alt="..." />
+								<img src={product.img_url} className="img-fluid rounded-start mx-3" alt="..." />
 							</div>
 							<div
 								className="col
 							"
 							>
-								<div className="card-body">
+								<div className="card-body mx-4">
 									<h5 className="card-title">{product.nombre}</h5>
 									<p className="card-text">{product.precio} €</p>
 								</div>

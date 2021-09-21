@@ -8,7 +8,7 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
 	const totalPrice = productsPrice * discount;
 	return (
 		<div>
-			<div>{cartItems.length === 0 && <div>El carrito esta vacío</div>}</div>
+			<div>{cartItems.length === 0 && <div className="container text-center mt-3">El carrito esta vacío</div>}</div>
 			{cartItems.map((product) => {
 				return (
 					<div key={product._id} className="row basket">
