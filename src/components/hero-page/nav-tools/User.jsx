@@ -13,23 +13,45 @@ const User = () => {
 		fNacimiento: "",
 		telefono: cookiesLog.get("telefono"),
 		email: cookiesLog.get("email"),
-		password: "",
 	});
+	const [password, setPassword] = useState("");
 
 	const logOut = () => {
 		cookiesLog.remove("email");
 		window.location.href = "./login";
 	};
-
+	const handlePassword = (event) => {
+		setPassword({
+			...password,
+			[event.target.name]: event.target.value,
+		});
+	};
 	const handleInputs = (event) => {
 		setUser({
 			...user,
 			[event.target.name]: event.target.value,
 		});
 	};
+	const submitFormPass = async (event) => {
+		event.preventDefault();
+		await axios
+			.patch(`${process.env.REACT_APP_BASE_URL}/usuarios/password/${cookiesLog.get("userId")}`, password, {
+				headers: {
+					Authorization: "Bearer " + cookiesLog.token, // En los headers van 'Bearer ' + token recibido
+				},
+			})
+			.then((response) => {
+				swal("Bien!", "Contraseña actualizada", "success");
+			})
+			.catch((error) => {
+				// console.log(error.response.data);
+				swal("Atención!", "Algo falló, intentalo de nuevo", "warning");
+			});
+		logOut();
+	};
 
 	// console.log(cookies.get("userId"));
-	const submitForm = async (event) => {
+	const submitFormData = async (event) => {
 		event.preventDefault();
 		await axios
 			.patch(`${process.env.REACT_APP_BASE_URL}/usuarios/${cookiesLog.get("userId")}`, user, {
@@ -44,7 +66,7 @@ const User = () => {
 				// console.log(error.response.data);
 				swal("Atención!", "Este email ya esta en eso", "warning");
 			});
-		// logOut();
+		logOut();
 	};
 	const repeatPassword = () => {
 		const p1 = document.getElementById("pass1");
@@ -56,7 +78,7 @@ const User = () => {
 	};
 	return (
 		<div className="mt-5">
-			<form action="" onSubmit={submitForm}>
+			<form action="" onSubmit={submitFormData}>
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
@@ -98,17 +120,9 @@ const User = () => {
 								</span>
 								<input type="email" className="form-control" aria-label="Email" aria-describedby="inputGroup-sizing-sm" defaultValue={cookiesLog.get("email")} name="email" onChange={handleInputs} required />
 							</div>
-							<div className="input-group input-group-sm mb-3">
-								<span className="input-group-text" id="inputGroup-sizing-sm">
-									<ion-icon name="key"></ion-icon>
-								</span>
-								<input type="password" className="form-control" aria-label="contraseña" aria-describedby="inputGroup-sizing-sm" placeholder="Introduce la contraseña nueva" id="pass1" minlength="6" />
-
-								<input type="password" className="form-control" aria-label="contraseña" aria-describedby="inputGroup-sizing-sm" placeholder="Repite la contraseña" name="password" id="pass2" onChange={handleInputs} minlength="6" />
-							</div>
 						</div>
 						<div className="modal-footer">
-							<button type="submit" className="btn btn-primary" onClick={repeatPassword}>
+							<button type="submit" className="btn btn-primary">
 								Aceptar
 							</button>
 							<button type="reset" className="btn btn-secondary">
@@ -118,6 +132,32 @@ const User = () => {
 					</div>
 				</div>
 			</form>
+			<div className="modal-dialog">
+				<div className="modal-content">
+					<form action="" onSubmit={submitFormPass}>
+						<div className="modal-header">
+							<h5 className="modal-title text-muted fw-bold" id="staticBackdropLabel">
+								ACTUALIZAR CONTRASEÑA
+							</h5>
+						</div>
+						<div className="modal-body">
+							<div className="input-group input-group-sm mb-3">
+								<span className="input-group-text" id="inputGroup-sizing-sm">
+									<ion-icon name="key"></ion-icon>
+								</span>
+								<input type="password" className="form-control" aria-label="contraseña" aria-describedby="inputGroup-sizing-sm" placeholder="Introduce la contraseña nueva" id="pass1" minLength="6" />
+
+								<input type="password" className="form-control" aria-label="contraseña" aria-describedby="inputGroup-sizing-sm" placeholder="Repite la contraseña" name="password" id="pass2" onChange={handlePassword} minLength="6" />
+							</div>
+						</div>
+						<div className="modal-footer">
+							<button type="submit" className="btn btn-primary" onClick={repeatPassword}>
+								Aceptar
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	);
 };
