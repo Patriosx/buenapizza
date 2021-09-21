@@ -9,11 +9,10 @@ const SingleProduct = ({ product, onAdd }) => {
 				<ProductTitle>{product.nombre}</ProductTitle>
 				<ProductDesc>{product.ingredientes}</ProductDesc>
 				<ProductPrice>{product.precio}€</ProductPrice>
-				{/* <ProductButton onClick={() => addProduct(product)}>Añadir</ProductButton> */}
 				<ProductButton
 					onClick={() => {
 						onAdd(product);
-						swal("Se ha añadido la pizza a la cesta", product.nombre);
+						swal(product.nombre, "Se ha añadido a la cesta");
 					}}
 				>
 					Añadir

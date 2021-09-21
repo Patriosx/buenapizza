@@ -38,9 +38,8 @@ function App() {
 			const response = await axios(process.env.REACT_APP_BASE_URL + "/pizzas");
 			setPizzaList(response.data.pizzas);
 			// console.log("pizzas obtenidas", response.data.pizzas);
-			// .catch((e) => console.log("error", e));
 		} catch (error) {
-			console.log(error);
+			console.log("Error al obtener los productos", error);
 		}
 	};
 	return (

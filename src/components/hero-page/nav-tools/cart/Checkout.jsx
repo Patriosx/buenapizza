@@ -17,8 +17,6 @@ export const Checkout = ({ totalPrice, cartItems }) => {
 		precio: totalPrice,
 	});
 
-	console.log(cartItems);
-	console.log("order", order);
 	const checkoutSubmit = async () => {
 		cartItems.forEach((p) => {
 			order.id_pizzas.push(p._id);
@@ -39,7 +37,7 @@ export const Checkout = ({ totalPrice, cartItems }) => {
 				window.location.href = "./";
 			})
 			.catch((error) => {
-				console.log(error.response.data);
+				// console.log(error.response.data);
 				alert("Fallo al iniciar Sesión. Comprueba tus datos.");
 			});
 	};

@@ -27,7 +27,7 @@ const User = () => {
 		});
 	};
 
-	console.log(cookies.get("userId"));
+	// console.log(cookies.get("userId"));
 	const submitForm = async (event) => {
 		event.preventDefault();
 		await axios
@@ -37,12 +37,10 @@ const User = () => {
 				},
 			})
 			.then((response) => {
-				console.log("Información actualizada");
 				swal("Bien!", "Información actualizada", "success");
-				
 			})
 			.catch((error) => {
-				console.log(error.response.data);
+				// console.log(error.response.data);
 				swal("Atención!", "Este email ya esta en eso", "warning");
 			});
 	};
@@ -97,9 +95,9 @@ const User = () => {
 								<span className="input-group-text" id="inputGroup-sizing-sm">
 									<ion-icon name="key"></ion-icon>
 								</span>
-								<input type="password" className="form-control" aria-label="contraseña" aria-describedby="inputGroup-sizing-sm" placeholder="Introduce tu contraseña" id="pass1" minlength="6"/>
+								<input type="password" className="form-control" aria-label="contraseña" aria-describedby="inputGroup-sizing-sm" placeholder="Introduce tu contraseña" id="pass1" minlength="6" />
 
-								<input type="password" className="form-control" aria-label="contraseña" aria-describedby="inputGroup-sizing-sm" placeholder="Repite tu contraseña" name="password" id="pass2" onChange={handleInputs} required minlength="6"/>
+								<input type="password" className="form-control" aria-label="contraseña" aria-describedby="inputGroup-sizing-sm" placeholder="Repite tu contraseña" name="password" id="pass2" onChange={handleInputs} required minlength="6" />
 							</div>
 						</div>
 						<div className="modal-footer">

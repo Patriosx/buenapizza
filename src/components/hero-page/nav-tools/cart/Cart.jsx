@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { productData } from "../../../products/data";
 const Cart = ({ cartItems }) => {
-	console.log("cartItems", cartItems);
+	// console.log("cartItems", cartItems);
 	return (
 		<div>
 			<h1>Productos en la cesta</h1>
 			{cartItems.map((product, index) => {
-				console.log("id pizza: ", product._id);
+				// console.log("id pizza: ", product._id);
 				return (
 					<div className="card mb-3" style={{ maxWidth: "540px" }} key={index}>
 						<div className="row g-0">
