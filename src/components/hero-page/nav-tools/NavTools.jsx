@@ -10,11 +10,16 @@ const NavTools = () => {
 		<div>
 			<div className="row nav-tools" id="nav-tools">
 				{cookies.get("email") ? (
-					<div className="col" onClick={goToTop}>
-						<NavLink to="/user" exact activeClassName="active">
-							<ion-icon name="person"></ion-icon>
-						</NavLink>
-					</div>
+					<>
+						<div className="col">
+							<h5>{cookies.get("nombre")}</h5>
+						</div>
+						<div className="col" onClick={goToTop}>
+							<NavLink to="/user" exact activeClassName="active">
+								<ion-icon name="person"></ion-icon>
+							</NavLink>
+						</div>
+					</>
 				) : (
 					<>
 						<div className="col" onClick={goToTop}>

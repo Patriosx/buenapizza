@@ -44,6 +44,14 @@ function App() {
 	};
 	return (
 		<>
+			<div id="cajacookies">
+				<p>
+					<button onclick="aceptarCookies()" class="pull-right">
+						<i class="fa fa-times"></i> Aceptar y cerrar éste mensaje
+					</button>
+					Éste sitio web usa cookies, si permanece aquí acepta su uso. Puede leer más sobre el uso de cookies en nuestra <a href="politica.html">política de privacidad</a>.
+				</p>
+			</div>
 			<HeroPage cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} access={access} setAccess={setAccess} />
 			<Products heading="Elige tu pizza" getPizzas={getPizzas} pizzaList={pizzaList} onAdd={onAdd} cartItems={cartItems} />
 		</>
