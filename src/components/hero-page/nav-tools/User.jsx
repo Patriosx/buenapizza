@@ -43,6 +43,7 @@ const User = () => {
 				// console.log(error.response.data);
 				swal("Atención!", "Este email ya esta en eso", "warning");
 			});
+		logOut();
 	};
 	const repeatPassword = () => {
 		const p1 = document.getElementById("pass1");
